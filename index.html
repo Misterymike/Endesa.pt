@@ -4,61 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Endesa - Poupe na sua Fatura</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-</head>
-<body class="bg-gray-100 text-gray-900">
-    <header class="bg-blue-600 text-white text-center py-4">
-        <h1 class="text-2xl font-bold">🎉 70€ de oferta na sua primeira fatura ao aderir! 🎉</h1>
-    </header>
-    
-    <main class="max-w-2xl mx-auto mt-6 p-6 bg-white shadow-lg rounded-lg">
-        <h2 class="text-xl font-semibold text-center">📄 Tem a sua fatura à mão?</h2>
-        <p class="text-center text-gray-600">Faça o upload da sua fatura e garanta o melhor preço.</p>
-        
-        <form class="mt-4 space-y-4">
-            <div>
-                <label class="block font-medium">📌 Nome e Apelido</label>
-                <input type="text" class="w-full border rounded p-2" placeholder="Seu Nome">
-            </div>
-            <div>
-                <label class="block font-medium">📞 Telefone</label>
-                <input type="tel" class="w-full border rounded p-2" placeholder="Seu Telefone">
-            </div>
-            <div>
-                <label class="block font-medium">📧 Email</label>
-                <input type="email" class="w-full border rounded p-2" placeholder="Seu Email">
-            </div>
-            <div>
-                <label class="block font-medium">📎 Envie sua fatura</label>
-                <input type="file" class="w-full border rounded p-2">
-            </div>
-            <div class="flex items-center">
-                <input type="checkbox" id="autorizo" class="mr-2">
-                <label for="autorizo">Autorizo a Endesa a utilizar os meus dados para contacto.</label>
-            </div>
-            <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">ENVIAR</button>
-        </form>
-    </main>
-    
-    <section class="max-w-2xl mx-auto mt-6 p-6 bg-white shadow-lg rounded-lg text-center">
-        <h2 class="text-xl font-semibold">💰 Simulador de Poupança</h2>
-        <p class="text-gray-600">Insira o valor médio da sua fatura para calcular a poupança.</p>
-        <input id="valorFatura" type="number" class="w-full border rounded p-2 mt-2" placeholder="Valor médio da sua fatura (€)">
-        <button onclick="calcularPoupanca()" class="w-full bg-green-500 text-white py-2 mt-4 rounded hover:bg-green-600">Calcular</button>
-        <p id="resultado" class="mt-4 font-semibold text-lg"></p>
-    </section>
-    
-    <footer class="text-center py-4 mt-6">
-        <button class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800">🎙️ Ativar Narração</button>
-        <a href="#" class="block mt-2 bg-green-500 text-white py-2 px-6 rounded hover:bg-green-600">💬 Fale Connosco no WhatsApp</a>
-    </footer>
-    
-    <script>
-        function calcularPoupanca() {
-            const valor = document.getElementById("valorFatura").value;
-            const poupanca = valor * 0.3;
-            document.getElementById("resultado").innerText = `💡 Com a Endesa, pode poupar aproximadamente ${poupanca.toFixed(2)}€ na fatura!`;
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
-    </script>
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            max-width: 100%;
+        }
+        .highlight {
+            color: #0077C8;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .offer {
+            background: #ffcc00;
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .form-group {
+            margin: 15px 0;
+            text-align: left;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: #0077C8;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .whatsapp {
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            display: block;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="endesa-logo.png" alt="Endesa" class="logo">
+        <div class="offer">🎉 70€ DE OFERTA NA SUA PRIMEIRA FATURA! 🎉</div>
+        <p class="highlight">Adira agora e comece a poupar na sua fatura de energia!</p>
+        <form>
+            <div class="form-group">
+                <label>📌 Nome e Apelido</label>
+                <input type="text" placeholder="Digite seu nome completo">
+            </div>
+            <div class="form-group">
+                <label>📞 Telefone</label>
+                <input type="tel" placeholder="Digite seu número de telefone">
+            </div>
+            <div class="form-group">
+                <label>📧 Email</label>
+                <input type="email" placeholder="Digite seu email">
+            </div>
+            <div class="form-group">
+                <label>📄 Envie sua Fatura</label>
+                <input type="file">
+            </div>
+            <button type="submit">ENVIAR</button>
+        </form>
+        <a href="https://wa.me/seunumerodewhatsapp" class="whatsapp">💬 Fale Connosco no WhatsApp</a>
+    </div>
 </body>
 </html>
