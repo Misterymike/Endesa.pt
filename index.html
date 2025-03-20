@@ -4,48 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Endesa - Poupe na sua Fatura</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
 </head>
-<body>
-
-    <header>
-        <img src="endesa.jpg" alt="Endesa" class="logo">
-        <div class="promo">🎉 70€ de oferta na sua primeira fatura ao aderir! 🎉</div>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-blue-600 text-white text-center py-4">
+        <h1 class="text-2xl font-bold">🎉 70€ de oferta na sua primeira fatura ao aderir! 🎉</h1>
     </header>
-
-    <main>
-        <div class="fatura-box">
-            <h2>📄 TEM A SUA FATURA À MÃO?</h2>
-            <p>Faça aqui o upload da sua fatura e garanta o melhor preço.</p>
-            <form action="https://formsubmit.co/miguelferreira@presentiluminado.pt" method="POST" enctype="multipart/form-data">
-                <input type="text" name="name" placeholder="📌 Nome e Apelido" required>
-                <input type="tel" name="phone" placeholder="📞 Telefone" required>
-                <input type="email" name="email" placeholder="📧 Email" required>
-                <input type="file" name="file" required>
-                <label>
-                    <input type="checkbox" required> Autorizo a Endesa a utilizar os meus dados para contacto.
-                </label>
-                <button type="submit">ENVIAR</button>
-            </form>
-        </div>
-
-        <div class="simulador">
-            <h2>💰 Simulador de Poupança</h2>
-            <p>Valor médio da sua fatura (€):</p>
-            <input type="number" id="valorFatura" value="100">
-            <button onclick="calcularPoupanca()">Calcular</button>
-            <p id="resultadoPoupanca">💡 Com a Endesa, pode poupar aproximadamente <span id="poupancaValor">30.00€</span> na fatura!</p>
-        </div>
-
-        <!-- Botão para ativar/desativar narração -->
-        <button id="audio-toggle" onclick="toggleAudio()">🔊 Ativar Narração</button>
-
+    
+    <main class="max-w-2xl mx-auto mt-6 p-6 bg-white shadow-lg rounded-lg">
+        <h2 class="text-xl font-semibold text-center">📄 Tem a sua fatura à mão?</h2>
+        <p class="text-center text-gray-600">Faça o upload da sua fatura e garanta o melhor preço.</p>
+        
+        <form class="mt-4 space-y-4">
+            <div>
+                <label class="block font-medium">📌 Nome e Apelido</label>
+                <input type="text" class="w-full border rounded p-2" placeholder="Seu Nome">
+            </div>
+            <div>
+                <label class="block font-medium">📞 Telefone</label>
+                <input type="tel" class="w-full border rounded p-2" placeholder="Seu Telefone">
+            </div>
+            <div>
+                <label class="block font-medium">📧 Email</label>
+                <input type="email" class="w-full border rounded p-2" placeholder="Seu Email">
+            </div>
+            <div>
+                <label class="block font-medium">📎 Envie sua fatura</label>
+                <input type="file" class="w-full border rounded p-2">
+            </div>
+            <div class="flex items-center">
+                <input type="checkbox" id="autorizo" class="mr-2">
+                <label for="autorizo">Autorizo a Endesa a utilizar os meus dados para contacto.</label>
+            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">ENVIAR</button>
+        </form>
     </main>
-
-    <!-- Botão do WhatsApp -->
-    <a href="https://wa.me/935358897" class="whatsapp-button">💬 Fale Connosco no WhatsApp</a>
-
-    <script src="script.js"></script>
-
+    
+    <section class="max-w-2xl mx-auto mt-6 p-6 bg-white shadow-lg rounded-lg text-center">
+        <h2 class="text-xl font-semibold">💰 Simulador de Poupança</h2>
+        <p class="text-gray-600">Insira o valor médio da sua fatura para calcular a poupança.</p>
+        <input id="valorFatura" type="number" class="w-full border rounded p-2 mt-2" placeholder="Valor médio da sua fatura (€)">
+        <button onclick="calcularPoupanca()" class="w-full bg-green-500 text-white py-2 mt-4 rounded hover:bg-green-600">Calcular</button>
+        <p id="resultado" class="mt-4 font-semibold text-lg"></p>
+    </section>
+    
+    <footer class="text-center py-4 mt-6">
+        <button class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800">🎙️ Ativar Narração</button>
+        <a href="#" class="block mt-2 bg-green-500 text-white py-2 px-6 rounded hover:bg-green-600">💬 Fale Connosco no WhatsApp</a>
+    </footer>
+    
+    <script>
+        function calcularPoupanca() {
+            const valor = document.getElementById("valorFatura").value;
+            const poupanca = valor * 0.3;
+            document.getElementById("resultado").innerText = `💡 Com a Endesa, pode poupar aproximadamente ${poupanca.toFixed(2)}€ na fatura!`;
+        }
+    </script>
 </body>
 </html>
