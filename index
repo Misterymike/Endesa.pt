@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endesa - Poupe na sua Fatura</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <img src="endesa.jpg" alt="Endesa" class="logo">
+        <div class="promo">🎉 70€ de oferta na sua primeira fatura ao aderir! 🎉</div>
+    </header>
+
+    <main>
+        <div class="fatura-box">
+            <h2>📄 TEM A SUA FATURA À MÃO?</h2>
+            <p>Faça aqui o upload da sua fatura e garanta o melhor preço.</p>
+            <form action="https://formsubmit.co/miguelferreira@presentiluminado.pt" method="POST" enctype="multipart/form-data">
+                <input type="text" name="name" placeholder="📌 Nome e Apelido" required>
+                <input type="tel" name="phone" placeholder="📞 Telefone" required>
+                <input type="email" name="email" placeholder="📧 Email" required>
+                <input type="file" name="file" required>
+                <label>
+                    <input type="checkbox" required> Autorizo a Endesa a utilizar os meus dados para contacto.
+                </label>
+                <button type="submit">ENVIAR</button>
+            </form>
+        </div>
+
+        <div class="simulador">
+            <h2>💰 Simulador de Poupança</h2>
+            <p>Valor médio da sua fatura (€):</p>
+            <input type="number" id="valorFatura" value="100">
+            <button onclick="calcularPoupanca()">Calcular</button>
+            <p id="resultadoPoupanca">💡 Com a Endesa, pode poupar aproximadamente <span id="poupancaValor">30.00€</span> na fatura!</p>
+        </div>
+
+        <!-- Botão para ativar/desativar narração -->
+        <button id="audio-toggle" onclick="toggleAudio()">🔊 Ativar Narração</button>
+
+    </main>
+
+    <!-- Botão do WhatsApp -->
+    <a href="https://wa.me/935358897" class="whatsapp-button">💬 Fale Connosco no WhatsApp</a>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
