@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    background-color: #0074D9;
+    color: white;
+    padding: 20px;
+}
+
+.logo {
+    width: 150px;
+}
+
+.promo {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.fatura-box, .simulador {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #0074D9;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056A3;
+}
+
+.whatsapp-button {
+    display: block;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.whatsapp-button:hover {
+    background-color: #1DA851;
+}
